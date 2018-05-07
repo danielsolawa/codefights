@@ -1,1 +1,1 @@
-CodeFights
+CodeFights Solutions
