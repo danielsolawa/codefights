@@ -8,15 +8,12 @@ public class Candles {
 	}
 	
 	int burnCandles(double candles, double leftover, double makeNew) {
+		double newCandles = Math.floor(leftover / makeNew);
 		
 		if(candles == 0 && leftover < makeNew)
 			return 0;
-		else {
-			leftover += candles; 
-			double newCandles = Math.floor(leftover / makeNew);
-			leftover -= newCandles * makeNew;
-
-			return (int) (candles + burnCandles(newCandles, leftover, makeNew));
-		}
+		
+		
+		return (int) (candles + burnCandles(newCandles, (leftover - (newCandles * makeNew)) + candles, makeNew));
 	}
 }
